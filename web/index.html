@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AFKCloud • Minecraft Bot</title>
+<style>
+:root{--bg:#080a12;--panel:rgba(17,20,33,.82);--panel2:#111526;--line:#252b42;--text:#eef1ff;--muted:#8f98b8;--accent:#8b5cf6;--accent2:#22d3ee;--ok:#35d07f;--bad:#ff5d73;--warn:#f5b84b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(900px 500px at 15% -10%,rgba(139,92,246,.22),transparent 55%),radial-gradient(700px 500px at 100% 0%,rgba(34,211,238,.12),transparent 55%),var(--bg);color:var(--text);font:14px Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+button,input,select{font:inherit}button{cursor:pointer}.app{display:flex;min-height:100vh}.side{width:240px;padding:22px 16px;border-right:1px solid var(--line);background:rgba(8,10,18,.72);backdrop-filter:blur(18px);position:fixed;inset:0 auto 0 0}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;margin-bottom:28px}.logo{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 10px 35px rgba(139,92,246,.28)}.nav button{width:100%;border:0;background:transparent;color:var(--muted);text-align:left;padding:11px 12px;border-radius:10px;margin:3px 0}.nav button.active,.nav button:hover{color:var(--text);background:#171b2d}.side small{position:absolute;bottom:20px;color:#66708f}.main{margin-left:240px;width:calc(100% - 240px);padding:28px;max-width:1500px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.title h1{margin:0;font-size:26px}.title p{margin:6px 0;color:var(--muted)}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);padding:8px 11px;border-radius:999px;background:rgba(17,21,38,.7);color:var(--muted)}.dot{width:8px;height:8px;border-radius:50%;background:var(--bad);box-shadow:0 0 12px currentColor}.dot.on{background:var(--ok)}.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 18px 60px rgba(0,0,0,.18);backdrop-filter:blur(18px)}.card h2{font-size:15px;margin:0 0 15px}.fields{display:grid;grid-template-columns:2fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:var(--muted)}input,select{width:100%;background:#0d1120;border:1px solid #29304a;color:var(--text);border-radius:10px;padding:11px 12px;outline:none}input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(139,92,246,.12)}.actions{display:flex;gap:9px;margin-top:15px;flex-wrap:wrap}button.primary,button.secondary,button.danger{border:0;border-radius:10px;padding:10px 15px;font-weight:700}.primary{background:linear-gradient(135deg,var(--accent),#6d4df4);color:#fff}.secondary{background:#1b2135;color:var(--text)}.danger{background:rgba(255,93,115,.12);color:#ff8192;border:1px solid rgba(255,93,115,.25)!important}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{padding:14px;border:1px solid var(--line);border-radius:13px;background:rgba(10,13,24,.55)}.stat b{display:block;font-size:18px;margin-top:4px}.stat span{font-size:11px;color:var(--muted)}.chat{height:330px;overflow:auto;background:#080b14;border:1px solid var(--line);border-radius:12px;padding:10px}.msg{padding:6px 5px;border-bottom:1px solid rgba(37,43,66,.45);word-break:break-word}.msg time{color:#626c8b;font-size:11px;margin-right:7px}.chatform{display:flex;gap:8px;margin-top:9px}.chatform input{flex:1}.logs{height:180px;overflow:auto;background:#080b14;border-radius:12px;padding:10px;font:12px ui-monospace,SFMono-Regular,Consolas,monospace;color:#aeb7d5}.mapwrap{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.mapwrap canvas{width:min(384px,100%);height:auto;aspect-ratio:1;border-radius:8px;image-rendering:pixelated;background:#eee;box-shadow:0 10px 35px rgba(0,0,0,.35);border:8px solid #b08a62}.mapmeta{color:var(--muted);font-size:12px}.log{margin-bottom:6px}.saved{display:flex;gap:8px}.saved select{flex:1}.empty{color:#69728e;text-align:center;padding:30px}.section{display:none}.section.active{display:block}.notice{margin-top:12px;color:var(--muted);font-size:12px;line-height:1.5}.toggle{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line)}.switch{width:42px;height:24px;border-radius:20px;background:#2a3046;padding:3px}.switch i{display:block;width:18px;height:18px;border-radius:50%;background:#8d95ad;transition:.2s}.switch.on{background:var(--accent)}.switch.on i{transform:translateX(18px);background:#fff}@media(max-width:900px){.side{width:70px}.brand span,.nav button span,.side small{display:none}.main{margin-left:70px;width:calc(100% - 70px);padding:18px}.grid{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}}@media(max-width:600px){.top{align-items:flex-start;gap:10px}.title h1{font-size:21px}.stats{grid-template-columns:1fr 1fr}.side{padding:18px 8px}.nav button{text-align:center}.logo{margin:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+<div class="brand"><div class="logo">◆</div><span>AFKCloud</span></div>
+<nav class="nav">
+<button class="active" data-tab="dashboard">◈ <span>Dashboard</span></button>
+<button data-tab="chatTab">▣ <span>Live Chat</span></button>
+<button data-tab="play">▶ <span>Play</span></button><button data-tab="settings">⚙ <span>Settings</span></button>
+</nav>
+<small>Cloud Minecraft Bot</small>
+</aside>
+<main class="main">
+<header class="top"><div class="title"><h1>Minecraft Bot</h1><p>Manage your cloud connection from anywhere.</p></div><div class="pill"><i class="dot" id="statusDot"></i><span id="status">Offline</span></div></header>
+
+<section id="dashboard" class="section active">
+<div class="grid">
+<div class="card">
+<h2>Connection</h2>
+<div class="fields">
+<div class="field"><label>Server address</label><input id="host" placeholder="play.example.com"></div>
+<div class="field"><label>Port</label><input id="port" value="25565"></div>
+<div class="field"><label>Bot username</label><input id="username" placeholder="CloudBot"></div>
+<div class="field"><label>Minecraft version</label><select id="version"><option value="">Auto-detect</option><option>1.21.11</option><option>1.21.10</option><option>1.21.9</option><option>1.21.8</option><option>1.21.7</option><option>1.21.6</option><option>1.21.5</option><option>1.21.4</option><option>1.21.3</option><option>1.21.2</option><option>1.21.1</option><option>1.21</option><option>1.20.6</option><option>1.20.4</option><option>1.20.2</option><option>1.20.1</option><option>1.19.4</option><option>1.19.2</option><option>1.18.2</option><option>1.16.5</option><option>1.12.2</option><option>1.8.9</option></select></div>
+</div>
+<div class="actions"><button class="primary" id="start">Start Bot</button><button class="danger" id="stop">Stop Bot</button><button class="secondary" id="save">Save Profile</button></div>
+<div class="notice">Use only on servers that permit automated clients. The dashboard does not bypass authentication or anti-bot systems.</div>
+</div>
+
+<div class="card"><h2>Live status</h2><div class="stats">
+<div class="stat"><span>Connection</span><b id="statConn">Offline</b></div>
+<div class="stat"><span>Username</span><b id="statUser">—</b></div>
+<div class="stat"><span>Server</span><b id="statServer">—</b></div>
+<div class="stat"><span>Uptime</span><b id="uptime">00:00:00</b></div>
+</div></div>
+
+<div class="card"><h2>Profiles</h2><div class="saved"><select id="profiles"><option value="">Select saved profile</option></select><button class="secondary" id="load">Load</button><button class="danger" id="remove">Delete</button></div><div class="notice">Profiles are stored in this browser.</div></div>
+
+<div class="card"><h2>Activity</h2><div class="logs" id="logs"><div class="empty">Waiting for activity…</div></div></div><div class="card"><h2>Verification Map Viewer</h2><div class="mapwrap"><canvas id="mapCanvas" width="128" height="128"></canvas><div class="mapmeta" id="mapMeta">Waiting for a map update…</div></div><div class="notice">This displays the Minecraft map data received by the bot so you can inspect it manually. It does not automatically read or solve CAPTCHA text.</div></div>
+</div>
+</section>
+
+<section id="chatTab" class="section">
+<div class="card"><h2>Live Minecraft Chat</h2><div class="chat" id="chat"><div class="empty">No messages yet.</div></div>
+<form class="chatform" id="chatForm"><input id="chatInput" maxlength="256" placeholder="Type a Minecraft chat message…" autocomplete="off"><button class="primary">Send</button></form></div>
+</section>
+
+
+<section id="play" class="section">
+<div class="card"><h2>Browser Play</h2>
+<div style="aspect-ratio:16/9;background:#05070d;border:1px solid #252b42;border-radius:14px;overflow:hidden">
+<iframe id="viewer" src="" style="width:100%;height:100%;border:0" title="Minecraft viewer"></iframe>
+</div>
+<div class="actions">
+<button class="secondary ctrl" data-a="forward">W</button>
+<button class="secondary ctrl" data-a="left">A</button>
+<button class="secondary ctrl" data-a="back">S</button>
+<button class="secondary ctrl" data-a="right">D</button>
+<button class="secondary ctrl" data-a="jump">Space</button>
+</div>
+<div class="notice">The Play panel shows a live 3D view of the connected bot and sends movement controls to Mineflayer. It is not a full browser-native Minecraft Java client. Use it only on servers that permit automated clients.</div>
+</div>
+</section>
+
+<section id="settings" class="section">
+<div class="card"><h2>Bot settings</h2>
+<div class="field"><label>Movement/rotation interval (minutes)</label><input id="spin" type="number" min="0" max="1440" value="5"></div>
+<div class="toggle"><span>Auto reconnect</span><div class="switch on" id="reconnect"><i></i></div></div>
+<div class="toggle"><span>Remember connection profile</span><div class="switch" id="remember"><i></i></div></div>
+<div class="toggle"><span>Auto-hit nearby player every 7 seconds</span><div class="switch" id="autoHit"><i></i></div></div>
+<div class="toggle"><span>Auto-eat when food is low</span><div class="switch" id="autoEat"><i></i></div></div>
+<div class="notice">Automatic movement should only be enabled where the server's rules allow it. This client does not attempt to defeat anti-AFK or anti-bot protections.</div>
+</div>
+</section>
+</main>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+const $=id=>document.getElementById(id), socket=io(); let startedAt=null, timer=null;
+const keys=['host','port','username','version','spin'];
+function addLog(t){let box=$('logs');if(box.querySelector('.empty'))box.innerHTML='';let d=document.createElement('div');d.className='log';d.textContent=t;box.appendChild(d);box.scrollTop=box.scrollHeight}
+function addChat(t){let box=$('chat');if(box.querySelector('.empty'))box.innerHTML='';let d=document.createElement('div');d.className='msg';let tm=document.createElement('time');tm.textContent=new Date().toLocaleTimeString();d.append(tm,document.createTextNode(t));box.appendChild(d);box.scrollTop=box.scrollHeight}
+function setStatus(s,on){$('status').textContent=s;$('statConn').textContent=s;$('statusDot').classList.toggle('on',on)}
+function tick(){if(!startedAt)return;let x=Math.floor((Date.now()-startedAt)/1000);$('uptime').textContent=[x/3600|0,(x%3600)/60|0,x%60].map(n=>String(n).padStart(2,'0')).join(':')}
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));$(b.dataset.tab).classList.add('active')});
+$('start').onclick=async()=>{let body={};keys.forEach(k=>body[k]=$ (k).value);body.reconnect=$('reconnect').classList.contains('on');body.autoHit=$('autoHit').classList.contains('on')?'true':'false';body.autoEat=$('autoEat').classList.contains('on')?'true':'false';let r=await fetch('/api/start',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});let d=await r.json();if(!d.ok)addLog('Error: '+(d.error||'Unable to start'))};
+$('stop').onclick=async()=>{await fetch('/api/stop',{method:'POST'});setStatus('Offline',false);startedAt=null;clearInterval(timer);$('uptime').textContent='00:00:00'};
+$('chatForm').onsubmit=async e=>{e.preventDefault();let m=$('chatInput').value.trim();if(!m)return;let r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:m})});let d=await r.json();if(d.ok)$('chatInput').value='';else addLog('Chat error: '+(d.error||'Unable to send'))};
+$('save').onclick=()=>{let name=prompt('Profile name?');if(!name)return;let all=JSON.parse(localStorage.profiles||'{}'),v={};keys.forEach(k=>v[k]=$(k).value);all[name]=v;localStorage.profiles=JSON.stringify(all);const mapPalette=[
+[0,0,0],[89,125,39],[109,153,48],[127,178,56],[67,94,29],
+[174,164,115],[213,201,140],[247,233,163],[130,123,86],
+[138,138,138],[169,169,169],[197,197,197],[104,104,104],
+[180,0,0],[220,0,0],[255,0,0],[135,0,0],
+[112,112,180],[138,138,220],[160,160,255],[84,84,135],
+[117,117,117],[144,144,144],[167,167,167],[79,79,79],
+[0,87,0],[0,106,0],[0,124,0],[0,67,0],
+[180,180,180],[220,220,220],[255,255,255],[135,135,135],
+[115,118,129],[141,144,158],[157,160,175],[83,85,93],
+[106,76,54],[130,94,67],[151,109,77],[79,56,40],
+[79,79,79],[96,96,96],[112,112,112],[59,59,59],
+[0,0,255],[0,0,255],[0,0,255],[0,0,135],
+[255,255,255],[255,255,255],[255,255,255],[135,135,135],
+[160,80,78],[185,92,90],[217,107,105],[116,58,57],
+[79,79,79],[96,96,96],[112,112,112],[59,59,59]
+];
+function mapRgb(id){
+  id=Number(id)&255;
+  if(id<4)return [238,238,238];
+  const base=Math.floor((id-4)/4);
+  const shade=(id-4)%4;
+  const c=mapPalette[base]||[128,128,128];
+  const mult=[180,220,255,135][shade]/255;
+  return c.map(v=>Math.max(0,Math.min(255,Math.floor(v*mult))));
+}
+const mapCanvas=$('mapCanvas'),mapCtx=mapCanvas.getContext('2d',{alpha:false});
+mapCtx.imageSmoothingEnabled=false;
+function drawMap(m){
+  const w=Math.max(0,Math.min(128,Number(m.width)||0)),h=Math.max(0,Math.min(128,Number(m.height)||0));
+  if(!w||!h)return;
+  const ox=Math.max(0,Math.min(127,Number(m.x)||0)),oy=Math.max(0,Math.min(127,Number(m.y)||0));
+  const data=m.pixels||[];
+  for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+    const id=data[y*w+x]; if(id===undefined)continue;
+    const [r,g,b]=mapRgb(id); mapCtx.fillStyle=`rgb(${r},${g},${b})`; mapCtx.fillRect(ox+x,oy+y,1,1);
+  }
+  $('mapMeta').textContent=`Map update: ${w}×${h} • offset ${ox},${oy} • scale ${m.scale??'?'}`;
+}
+socket.on('mapUpdate',drawMap);
+renderProfiles();$('profiles').value=name};
+function renderProfiles(){let p=JSON.parse(localStorage.profiles||'{}');$('profiles').innerHTML='<option value="">Select saved profile</option>'+Object.keys(p).map(x=>'<option>'+x.replaceAll('&','&amp;').replaceAll('<','&lt;')+'</option>').join('')}
+$('load').onclick=()=>{let p=JSON.parse(localStorage.profiles||'{}')[$('profiles').value];if(p)keys.forEach(k=>$(k).value=p[k]??'')};
+$('remove').onclick=()=>{let n=$('profiles').value;if(!n)return;let p=JSON.parse(localStorage.profiles||'{}');delete p[n];localStorage.profiles=JSON.stringify(p);renderProfiles()};
+$('reconnect').onclick=()=>$('reconnect').classList.toggle('on');
+$('remember').onclick=()=>$('remember').classList.toggle('on');
+$('autoHit').onclick=()=>$('autoHit').classList.toggle('on');
+$('autoEat').onclick=()=>$('autoEat').classList.toggle('on');
+document.querySelectorAll('.ctrl').forEach(b=>{
+  const a=b.dataset.a;
+  const send=down=>fetch('/api/control',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:a,down})});
+  b.onmousedown=()=>send(true); b.onmouseup=()=>send(false); b.onmouseleave=()=>send(false);
+  b.ontouchstart=e=>{e.preventDefault();send(true)}; b.ontouchend=e=>{e.preventDefault();send(false)};
+});
+document.addEventListener('keydown',e=>{
+  if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName))return;
+  const map={KeyW:'forward',KeyA:'left',KeyS:'back',KeyD:'right',Space:'jump'};
+  if(map[e.code]){e.preventDefault();fetch('/api/control',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:map[e.code],down:true})})}
+});
+document.addEventListener('keyup',e=>{
+  const map={KeyW:'forward',KeyA:'left',KeyS:'back',KeyD:'right'};
+  if(map[e.code])fetch('/api/control',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:map[e.code],down:false})})
+});
+socket.on('status',x=>{
+  if(x.online) $('viewer').src=location.protocol+'//'+location.hostname+':3001';
+  else $('viewer').src='';
+});
+socket.on('status',x=>{setStatus(x.status||'Offline',!!x.online);if(x.username)$('statUser').textContent=x.username;if(x.host)$('statServer').textContent=x.host;if(x.online&&!startedAt){startedAt=Date.now();timer=setInterval(tick,1000)}});
+socket.on('log',x=>addLog(x.message));socket.on('serverchat',x=>addChat(x.message));
+const mapPalette=[
+[0,0,0],[89,125,39],[109,153,48],[127,178,56],[67,94,29],
+[174,164,115],[213,201,140],[247,233,163],[130,123,86],
+[138,138,138],[169,169,169],[197,197,197],[104,104,104],
+[180,0,0],[220,0,0],[255,0,0],[135,0,0],
+[112,112,180],[138,138,220],[160,160,255],[84,84,135],
+[117,117,117],[144,144,144],[167,167,167],[79,79,79],
+[0,87,0],[0,106,0],[0,124,0],[0,67,0],
+[180,180,180],[220,220,220],[255,255,255],[135,135,135],
+[115,118,129],[141,144,158],[157,160,175],[83,85,93],
+[106,76,54],[130,94,67],[151,109,77],[79,56,40],
+[79,79,79],[96,96,96],[112,112,112],[59,59,59],
+[0,0,255],[0,0,255],[0,0,255],[0,0,135],
+[255,255,255],[255,255,255],[255,255,255],[135,135,135],
+[160,80,78],[185,92,90],[217,107,105],[116,58,57],
+[79,79,79],[96,96,96],[112,112,112],[59,59,59]
+];
+function mapRgb(id){
+  id=Number(id)&255;
+  if(id<4)return [238,238,238];
+  const base=Math.floor((id-4)/4);
+  const shade=(id-4)%4;
+  const c=mapPalette[base]||[128,128,128];
+  const mult=[180,220,255,135][shade]/255;
+  return c.map(v=>Math.max(0,Math.min(255,Math.floor(v*mult))));
+}
+const mapCanvas=$('mapCanvas'),mapCtx=mapCanvas.getContext('2d',{alpha:false});
+mapCtx.imageSmoothingEnabled=false;
+function drawMap(m){
+  const w=Math.max(0,Math.min(128,Number(m.width)||0)),h=Math.max(0,Math.min(128,Number(m.height)||0));
+  if(!w||!h)return;
+  const ox=Math.max(0,Math.min(127,Number(m.x)||0)),oy=Math.max(0,Math.min(127,Number(m.y)||0));
+  const data=m.pixels||[];
+  for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+    const id=data[y*w+x]; if(id===undefined)continue;
+    const [r,g,b]=mapRgb(id); mapCtx.fillStyle=`rgb(${r},${g},${b})`; mapCtx.fillRect(ox+x,oy+y,1,1);
+  }
+  $('mapMeta').textContent=`Map update: ${w}×${h} • offset ${ox},${oy} • scale ${m.scale??'?'}`;
+}
+socket.on('mapUpdate',drawMap);
+renderProfiles();
+</script>
+</body></html>

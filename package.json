@@ -1,0 +1,19 @@
+{
+  "name": "mc-afk-dashboard",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Premium Minecraft bot web dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20 <25"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mineflayer": "^4.37.1",
+    "socket.io": "^4.8.1",
+    "prismarine-viewer": "^1.32.0"
+  }
+}
